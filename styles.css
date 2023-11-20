@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Segoe UI;
+}
+
+.nav-bar{
+    height: 70px;
+    background: #262626;
+}
+
+.brand{
+    float: left;
+    position: absolute;
+    padding-left: 20px;
+    line-height: 70px;
+    font-size: 1.5em;
+}
+
+.brand a{
+    text-decoration: underline;
+    color: white;
+}
+
+.nav-container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav{
+    float: right;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    float: left;
+    position: relative;
+}
+
+nav ul li a{
+    display: block;
+    padding: 0 20px;
+    line-height: 70px;
+    background: #262626;
+ text-decoration: none;
+    color: #fff;
+    border-radius: 10px;
+    transition: color 0.3s ease;
+
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.05em;
+    bottom: 20px;
+    left: 0;
+    background: currentcolor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+nav ul li a:not(:only-child):after{
+    content: '▼';
+    padding-left: 5px;
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a{
+    padding: 15px;
+    line-height: 20px;
+}
+
+.nav-dropdown{
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.nav-mobile{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+}
+
+#nav-toggle{
+    position: absolute;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 15px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span::before,
+#nav-toggle span::after{
+    position: absolute;
+    display: block;
+    content: '';
+    background: #fff;
+    height: 5px;
+    width: 35px;
+    transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span::before{
+    top: -10px;
+}
+
+#nav-toggle span::after{
+    bottom: -10px;
+}
+
+#nav-toggle.active span{
+    background-color: transparent;
+}
+
+#nav-toggle.active span::before, #nav-toggle.active span::after{
+    top: 0;
+}
+
+#nav-toggle.active span::before{
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span::after{
+    transform: rotate(-45deg);
+}
+
+@media only screen and (max-width: 768px) {
+
+    .nav-mobile{
+        display: block;
+    }
+
+    nav{
+        width: 120%;
+        padding: 70px 0 15px;
+    }
+
+    nav ul{
+        display: none;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+    nav ul li a{
+        padding: 15px;
+        line-height: 20px;
+        padding-left: 20%;
+        border-radius: 0%;
+    }
+
+
+    nav ul li ul li a{
+        padding-left: 30%;
+       
+    }
+
+    .nav-dropdown{
+        position: static;
+    }
+}
+
+@media screen and (min-width: 799px){
+    .nav-list{
+        display: block !important;
+    }
+}
+.btn-outline-secondary{
+    --bs-btn-color: #edcf25;
+    --bs-btn-border-color: #e2e7ac;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #edcf25;
+    --bs-btn-hover-border-color: #edcf25;
+    --bs-btn-focus-shadow-rgb: 108,117,125;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #6c757d;
+    --bs-btn-active-border-color: #6c757d;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #6c757d;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #6c757d;
+    --bs-gradient: none;
+}
